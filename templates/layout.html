@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Tweet!</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.5.2/css/bulma.min.css" />
+</head>
+
+<body>
+    <section class="hero is-light is-fullheight">
+        <div class="hero-head">
+            {% include 'includes/_navbar.html' %}
+        </div>
+      
+        <!-- Hero content: will be in the middle -->
+        <div class="hero-body">
+          <div class="container has-text-centered">
+            <h1 class="title">
+                {% block body %}{% endblock %}
+            </h1>
+            <h2 class="subtitle">
+              Subtitle
+            </h2>
+          </div>
+        </div>
+      
+        <!-- Hero footer: will stick at the bottom -->
+        
+      </section>
+  
+</body>
+
+</html>

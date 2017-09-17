@@ -9,10 +9,12 @@ This project was for the 2017 UIowa Bigdata Hackathon. It was created in under 3
 ## Things we learned
 
 On the back end of things we learned a lot about creating our own API as a personalization of the Twitter API.
+
 On the front end we learned a lot about flask before recognizing ReactJs as a better option.
 
-# Us
+## Us
 
+Check out the creators at their respective pages
 * [Danial]()
 * [Isaac](https://github.com/isaac34mi)
 * [Josh](https://github.com/jose56wonton)

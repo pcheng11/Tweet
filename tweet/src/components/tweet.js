@@ -5,7 +5,6 @@ class Tweet extends Component {
   
 
   render() {
-    console.log("tweet" + this.props.data);
     return <div className="box tweet">
         <article className="media">
           <div className="media-left">
@@ -19,7 +18,6 @@ class Tweet extends Component {
                 <strong>{this.props.data.NAME}</strong>
 
                 <small> @{this.props.data.NICKNAME}</small>
-                <small> {this.props.data.DATE}</small>
               </p>
               <p>
                 {this.props.data.TEXT}

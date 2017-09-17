@@ -12,6 +12,7 @@ class App extends Component {
       search: false,
       intervalId: null,
       data: [], 
+      dataTest: null,
       intervalId: null
     };
     this.hashSearch = this.hashSearch.bind(this);
@@ -22,15 +23,30 @@ class App extends Component {
     var intervalId = setInterval(() => {    
     axios
     .get(`https://cors-anywhere.herokuapp.com/https://yikyakapi.herokuapp.com/current/${search}`)
-    .then(response => {
-      var newData = this.state.data.concat(response.data);
-      this.setState({ data: newData, search: true });      
+    .then(response => { 
+      var newData;    
+      if(this.state.dataTest){
+        if(this.state.dataTest.TEXT !== response.data.TEXT){
+           newData = [response.data].concat(this.state.data);
+           this.setState({
+             data: newData,
+             search: true,
+             dataTest: response.data
+           }); 
+        }        
+      }else{
+        newData = [response.data].concat(this.state.data);
+        this.setState({ data: newData, search: true, dataTest: response.data });   
+      }
+      console.log(response.data.TEXT);     
+      console.log("2",(this.state.dataTest));     
     })
-    .catch(error => {})}, 1000)
+    .catch(error => {})}, 2000)
     this.setState({ intervalId: intervalId });
   }
   hashSearchTimer(search){
     clearInterval(this.state.intervalId);
+    this.setState({dataTest: null,data:[],search:false})
     this.hashSearch(search)
     
   }

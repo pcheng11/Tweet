@@ -9,7 +9,7 @@ class Tweets extends Component {
     //   return (<Tweet key={index} data={tweet} />)
     // });
     return (
-      <div > 
+      <div className="tweets"> 
         <Tweet key={1} data={this.props.data} />}
         <Tweet key={2} data={this.props.data} />}
         <Tweet key={3} data={this.props.data} />}

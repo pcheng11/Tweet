@@ -21,19 +21,18 @@ class Header extends Component {
   render() {
     return <div>
         <nav className="navbar  has-shadow">
+          
+         
           <div className="nav-right nav-menu">
             <span className="nav-item">
               <div className="field has-addons has-addons-centered">
                 <form className="control" onSubmit={this.handleSubmit}>
-                  <input type="text" 
-                  className="input"
-                   placeholder="Hashtag..." 
-                   value={this.state.term}
-                   onChange={this.handleChange} 
-                   />
+                  <input type="text" className="input" placeholder="Hashtag..." value={this.state.term} onChange={this.handleChange} />
                 </form>
                 <p className="control">
-                  <a onClick={this.handleSubmit} className="button is-primary">Search</a>
+                  <a onClick={this.handleSubmit} className="button is-primary">
+                    Search
+                  </a>
                 </p>
               </div>
             </span>

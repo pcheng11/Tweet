@@ -6,30 +6,28 @@ class Tweet extends Component {
 
   render() {
     console.log("tweet" + this.props.data);
-    return (
-      <div className="box tweet">
+    return <div className="box tweet">
         <article className="media">
           <div className="media-left">
             <figure className="image is-64x64">
-              <img src=""  />
+              <img src={this.props.data.PROFILEPIC} />
             </figure>
           </div>
           <div className="media-content">
             <div className="content">
+              <p className="title is-5">
+                <strong>{this.props.data.NAME}</strong>
+
+                <small> @{this.props.data.NICKNAME}</small>
+                <small> {this.props.data.DATE}</small>
+              </p>
               <p>
-                <strong>Name</strong>
-                <small> @Nickname</small>
-                <small> Date</small>
-                <br />
-                <br />
                 {this.props.data.TEXT}
               </p>
             </div>
-            
           </div>
         </article>
-      </div>
-    );
+      </div>;
   }
 }
 

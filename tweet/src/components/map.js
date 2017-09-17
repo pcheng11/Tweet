@@ -10,22 +10,16 @@ class Map extends Component {
     };
 
   render() {
-    console.log(styles)
 
     const data = this.props.data;
     var dots;
     
     if(data){
-      console.log(data);
-      dots = data.data.map((dot,index) => {
-        return(
-          <MyGreatPlace
-          key={index}
-          lat={JSON.parse(dot.Loc)[0]}
-          lng={JSON.parse(dot.Loc)[1]}
-          text={""}
-        />)
-      });
+      dots = data.map((dot,index) => {
+        console.log(dot.LOCATION)
+        return(dot.LOCATION =="None" ? null :(<MyGreatPlace key={index} lat={dot.LOCATION[0]} lng={dot.LOCATION[1]} text={""}/>))
+      });       
+    
     }else{
       dots = null;
     }

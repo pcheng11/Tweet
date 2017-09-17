@@ -22,9 +22,10 @@ class App extends Component {
     .then((response) => {
       this.setState({data: response.data,
                     search: true});
+                    
     })
     .catch((error) => {
-      console.log(error);
+      
     });
   }
   render() {
@@ -34,8 +35,7 @@ class App extends Component {
         <Header onSearch={hashSearch} />
         <div className="columns">      
             <div className="column is-3">
-              { this.state.search ?  <Tweets data={data}/> : null}
-              
+              { this.state.search ?  <Tweets data={data} /> : null}              
             </div>
 
             <div className="column is-9">

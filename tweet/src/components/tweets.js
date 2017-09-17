@@ -3,17 +3,16 @@ import Tweet from './tweet';
 import "../styles/styles.css";
 
 class Tweets extends Component {
-  constructor() {
-    super();
-    
-  }
+  
  
   render() {
-    const data = this.props.data;
+    var tweets = this.props.data.data.map((tweet,index) => {     
+      return (<Tweet key={index} data={tweet} />)
+    });
+    console.log(tweets)
     return (
       <div>
-        {console.log(this.props.data)}
-        <Tweet data={data} />
+          {tweets}   
       </div>
     );
   }

@@ -12,6 +12,7 @@ class Header extends Component {
   }
   handleSubmit(event){
     event.preventDefault();
+    
     this.props.onSearch(this.state.term);
   }
   handleChange(event){

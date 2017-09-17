@@ -2,28 +2,30 @@ import React, { Component } from "react";
 import "../styles/styles.css";
 
 class Tweet extends Component {
-  constructor() {
+  constructor(){
     super();
-
+    this.state = {
+      hover: false
+    };
+    
   }
+  
 
   render() {
+    console.log(this.props.data);
     return (
       <div className="box tweet">
         <article className="media">
           <div className="media-left">
             <figure className="image is-64x64">
-              <img
-                src="http://bulma.io/images/placeholders/128x128.png"
-                alt="Image"
-              />
+              <img src={this.props.data.Profile_img} alt="Image" />
             </figure>
           </div>
           <div className="media-content">
             <div className="content">
               <p>
-                <strong>{this.props.data.name}</strong> <small>@{this.props.data.nickname}</small>{" "}
-                <small>31m</small>
+                <strong>{this.props.data.name}</strong>{" "}
+                <small>@{this.props.data.nickname}</small> <small>31m</small>
                 <br />
                 {this.props.data.Text}
               </p>

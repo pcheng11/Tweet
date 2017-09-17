@@ -6,8 +6,9 @@
 // Add pink and its invert
 
 // Add a serif family
-$family-serif: "Merriweather", "Georgia", serif;
-
+$family-serif:  'Raleway', sans-serif;
+$grey: #c7c7c7;
+$primary: $grey;
 // 3. Set the derived variables
 // Use the new pink as the primary color
 
@@ -23,6 +24,9 @@ body{
   color: $primary;
   min-height: 100vh;
 }
+.root{
+    height: 100%;
+}
 .navbar{
   height: 6vh;
 }
@@ -30,15 +34,45 @@ body{
     height: 100%;
 
 }
+.columns{
+    position: relative;
+    height: 92vh;
+    z-index: 1;
+    margin: 1vh 0;
+}
+
+
+
 .map{
     width:100%;
-    height: 90vh;
-    margin: 2vh 0;
-}
-.tweet{
-    margin: 2vh 0;
-}
-.root{
     height: 100%;
+    box-shadow: 0 2px 3px rgba(10, 10, 10, 0.1);
+    filter:grayscale(100%);
 
+}
+.mapSection{
+    height: 100%;
+    width: 100%;
+    position:absolute; 
+  top: 0; 
+  left: 0; 
+  z-index: 0; 
+}
+
+
+
+.tweetSection{
+  position: relative; 
+  z-index: 1; 
+  width: 300px;
+  height: 100%;
+}
+
+
+.box{
+    border-radius: 0px;
+    box-shadow: 0 2px 3px rgba(10, 10, 10, 0.1)
+}
+*{
+    border-radius: 0;
 }
